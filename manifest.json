@@ -1,0 +1,29 @@
+{
+    "manifest_version": 2,
+    "name": "auto-cpanel-foco",
+    "version": "1.0.0",
+    "description": "",
+    "icons": {
+       "48": "./src/assets/icon48.png",
+       "128": "./src/assets/icon128.png"
+    },
+    "page_action": {
+        "default_icon": {
+            "19" : "./src/assets/icon19.png"
+        },
+        "default_title": "Auto Cpanel Foco"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "https://sdn01fmu.focomultimidia.com:10000/"
+            ],
+            "css": [
+                "./src/style.css"
+            ],
+            "js": [
+                "./src/script.js"
+            ]
+        }
+    ]
+}
