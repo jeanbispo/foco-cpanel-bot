@@ -1,15 +1,19 @@
-const interval = setInterval(() => {
-    const cpanelBox = window.frames[0].document.querySelector('.leftlink')
+const waitingForServerLinkLoad = setInterval(() => {
+    const serverLink = window.frames[0].document.querySelector('#catservers a');
 
-    if (cpanelBox) {
-        clearInterval(interval);
+    if (serverLink) {
+        clearInterval(waitingForServerLinkLoad);
 
-        navigateToMainPage();
+        start();
     }
-}, 1000)
+}, 100);
+
+const start = () => {
+    navigateToMainPage();
+}
 
 const navigateToMainPage = () => {
-    const linkToPage = window.frames[0].document.querySelector('#catservers a');
-    
-    linkToPage.click();
+    const linkToMainPage = window.frames[0].document.querySelector('#catservers a');
+
+    linkToMainPage.click();
 }
