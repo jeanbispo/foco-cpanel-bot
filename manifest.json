@@ -1,8 +1,8 @@
 {
     "manifest_version": 2,
-    "name": "auto-cpanel-foco",
+    "name": "Foco Cpanel Bot",
     "version": "1.0.0",
-    "description": "",
+    "description": "Crie zonas master no Cpanel da Foco Multimídia com poucos cliques!",
     "icons": {
        "48": "./src/assets/icon48.png",
        "128": "./src/assets/icon128.png"
@@ -14,7 +14,7 @@
         "default_icon": {
             "19" : "./src/assets/icon19.png"
         },
-        "default_title": "Auto Cpanel Foco"
+        "default_title": "Foco Cpanel Bot"
     },
     "content_scripts": [
         {
