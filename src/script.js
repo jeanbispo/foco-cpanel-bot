@@ -55,14 +55,17 @@ const createNewMasterZone = () => {
         const masterInput = window.frames[1].document.querySelector('#master');
         const emailInput = window.frames[1].document.querySelector('#email');
         const ipInput = window.frames[1].document.querySelector('#ip');
+        const createSubmit = window.frames[1].document.querySelector('#create');
     
         if (ipInput){
             clearInterval(interval);
     
+            domainInput.value = localStorage.getItem('domain');
             masterInput.value = 'ns1.focomultimidia.com';
             emailInput.value = 'fabricio.focomultimidia.com';
             ipInput.value = '192.169.80.82';
-            domainInput.focus();
+
+            createSubmit.click();
         } 
     }, 1000);
 }
