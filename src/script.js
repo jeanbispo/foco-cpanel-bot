@@ -1,6 +1,7 @@
 const start = () => {
     choseIfLogged();
     createAvatarPopUp();
+    deleteWrapper();
     createEventListenerNewMasterZone();
 }
 
@@ -79,6 +80,18 @@ const createAvatarPopUp = () => {
             frameLeft.appendChild(popUp);
         }
 
+    }, 100);
+}
+
+const deleteWrapper = () => {
+    const interval = setInterval(() => {
+        const wrapper = window.frames[0].document.querySelector('.wrapper');
+
+        if (wrapper) {
+            clearInterval(interval);
+            
+            wrapper.remove()
+        }
     }, 100);
 }
 
