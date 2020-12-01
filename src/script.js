@@ -142,7 +142,7 @@ const deleteWrapper = () => {
         if (wrapper) {
             clearInterval(interval);
             
-            wrapper.remove()
+            wrapper.style.display = 'none';
         }
     }, 100);
 }
