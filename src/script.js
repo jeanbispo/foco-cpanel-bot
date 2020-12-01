@@ -1,9 +1,9 @@
 const start = () => {
     doLoginIfDisconnected();
     navigateToMainPage();
+    deleteWrapper();
     createAvatarPopUp();
     createNewMasterZoneInput();
-    deleteWrapper();
     createEventListenerNewMasterZone();
 }
 
@@ -117,6 +117,19 @@ const submitDomain = event => {
     localStorage.setItem('domain', domain);
 
     event.target[0].value = 'Iniciando criação...';
+
+    navigateToNewMasterZone();
+}
+
+const navigateToNewMasterZone = () => {
+    const interval = setInterval(() => {
+        const createNewMasterZoneLink = window.frames[1].document.querySelectorAll('a.ui_link')[2];
+
+        if (createNewMasterZoneLink) {
+            clearInterval(interval);
+            createNewMasterZoneLink.click();
+        }
+    }, 100);
 }
 
 const deleteWrapper = () => {
