@@ -2,6 +2,7 @@ const start = () => {
     doLoginIfDisconnected();
     navigateToMainPage();
     createAvatarPopUp();
+    createNewMasterZoneInput();
     deleteWrapper();
     createEventListenerNewMasterZone();
 }
@@ -82,6 +83,40 @@ const createAvatarPopUp = () => {
         }
 
     }, 100);
+}
+
+const createNewMasterZoneInput = () => {
+    const interval = setInterval(() => {
+        const frameLeft = window.frames[0].document.querySelector('#popup');
+
+        if (frameLeft) {
+            clearInterval(interval);
+            
+            const menu = document.createElement('div');
+            const form = document.createElement('form');
+            const domainInput = document.createElement('input');
+
+            domainInput.type = 'text';
+            domainInput.name = 'domain';
+            domainInput.autofocus = true;
+            domainInput.placeholder = 'dominio.com.br';
+
+            form.onsubmit = (event) => submitDomain(event);
+
+            form.appendChild(domainInput);
+            menu.appendChild(form);
+            frameLeft.appendChild(menu);
+        }
+    }, 100);
+}
+
+const submitDomain = event => {
+    event.preventDefault();
+
+    const domain = event.target[0].value;
+    localStorage.setItem('domain', domain);
+
+    event.target[0].value = 'Iniciando criação...';
 }
 
 const deleteWrapper = () => {
