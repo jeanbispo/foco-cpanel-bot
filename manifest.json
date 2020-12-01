@@ -16,7 +16,7 @@
     "content_scripts": [
         {
             "matches": [
-                "https://sdn01fmu.focomultimidia.com:10000/"
+                "https://sdn01fmu.focomultimidia.com:10000/*"
             ],
             "css": [
                 "./src/style.css"

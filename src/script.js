@@ -1,22 +1,36 @@
-const waitingForServerLinkLoad = setInterval(() => {
-    const serverLink = window.frames[0].document.querySelector('#catservers a');
-
-    if (serverLink) {
-        clearInterval(waitingForServerLinkLoad);
-
-        start();
-    }
-}, 100);
-
 const start = () => {
-    navigateToMainPage();
+    choseIfLogged();
     createEventListenerNewMasterZone();
 }
 
-const navigateToMainPage = () => {
-    const linkToMainPage = window.frames[0].document.querySelector('#catservers a');
+const choseIfLogged = () => isLogged() ? navigateToMainPage() : login();
 
-    linkToMainPage.click();
+const isLogged = () => window.frames[0] ? true : false;
+
+const login = () => {
+    const interval = setInterval(() => {
+        const userInput = document.querySelector('#user');
+        const passInput = document.querySelector('#pass');
+        const loginInput = document.querySelector('[type=submit]');
+
+        if (userInput.value.length > 0 && passInput.value.length > 0) {
+            clearInterval(interval);
+
+            loginInput.click();
+        }
+    }, 100);
+}
+
+const navigateToMainPage = () => {
+    const interval = setInterval(() => {
+        const linkToMainPage = window.frames[0].document.querySelector('#catservers a');
+
+        if (linkToMainPage) {
+            clearInterval(interval);
+
+            linkToMainPage.click();
+        }
+    }, 100);
 }
 
 const createEventListenerNewMasterZone = () => {
@@ -48,3 +62,5 @@ const createNewMasterZone = () => {
         } 
     }, 1000);
 }
+
+start();
