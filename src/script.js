@@ -1,5 +1,6 @@
 const start = () => {
     choseIfLogged();
+    createAvatarPopUp();
     createEventListenerNewMasterZone();
 }
 
@@ -61,6 +62,24 @@ const createNewMasterZone = () => {
             domainInput.focus();
         } 
     }, 1000);
+}
+
+const createAvatarPopUp = () => {
+    const interval = setInterval(() => {
+        const frameLeft = window.frames[0].document.querySelector('#popup');
+        
+        if (frameLeft) {
+            clearInterval(interval);
+
+            const popUp = document.createElement('img');
+            const imgURL = chrome.extension.getURL("src/assets/gcaires-avataaars.png");
+
+            popUp.src = imgURL;
+            
+            frameLeft.appendChild(popUp);
+        }
+
+    }, 100);
 }
 
 start();
