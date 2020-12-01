@@ -8,7 +8,15 @@
        "128": "./src/assets/icon128.png"
     },
     "web_accessible_resources": [
-        "src/assets/*"
+        "src/assets/*",
+        "src/script.js",
+        "src/Bot/index.js",
+        "src/Bot/Login.js",
+        "src/Bot/Navigation.js",
+        "src/Bot/Avatar.js",
+        "src/Bot/Menu.js",
+        "src/Bot/MasterZone.js",
+        "src/Bot/Storage.js"
     ],
     "page_action": {
         "default_icon": {
@@ -25,7 +33,7 @@
                 "./src/style.css"
             ],
             "js": [
-                "./src/script.js"
+                "./src/enableES6.js"
             ]
         }
     ]
