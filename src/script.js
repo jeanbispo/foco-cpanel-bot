@@ -1,11 +1,12 @@
 const start = () => {
-    choseIfLogged();
+    doLoginIfDisconnected();
+    navigateToMainPage();
     createAvatarPopUp();
     deleteWrapper();
     createEventListenerNewMasterZone();
 }
 
-const choseIfLogged = () => isLogged() ? navigateToMainPage() : login();
+const doLoginIfDisconnected = () => !isLogged() && login();
 
 const isLogged = () => window.frames[0] ? true : false;
 
