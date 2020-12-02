@@ -33,3 +33,13 @@
 .bot-menu input:focus {
     border: 2px solid #457bc9;
 }
+
+.bot-menu a {
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.bot-menu #logout {
+    font-weight: bolder;
+    color: red !important;
+}

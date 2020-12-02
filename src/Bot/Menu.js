@@ -37,11 +37,17 @@ export default function(Bot) {
                 const form = document.createElement('form');
                 form.onsubmit = (event) => Bot.submitDomain(event);
                 form.appendChild(domainInput);
+
+                const logoutLink = document.createElement('a');
+                logoutLink.href = '/session_login.cgi?logout=1';
+                logoutLink.innerText = 'Sair';
+                logoutLink.id = 'logout';
                 
                 const menu = document.createElement('div');
                 menu.classList.add('bot-menu');
                 menu.appendChild(avatar);
                 menu.appendChild(form);
+                menu.appendChild(logoutLink);
 
                 frameLeft.appendChild(menu);
             }
