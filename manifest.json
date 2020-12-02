@@ -19,7 +19,8 @@
         "src/Bot/Menu.js",
         "src/Bot/MasterZone.js",
         "src/Bot/Address.js",
-        "src/Bot/NameServer.js"
+        "src/Bot/NameServer.js",
+        "src/Bot/Alias.js"
     ],
     "page_action": {
         "default_title": "Foco Cpanel Bot"

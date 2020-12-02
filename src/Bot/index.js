@@ -8,6 +8,7 @@ import Menu from './Menu.js';
 import MasterZone from './MasterZone.js';
 import Address from './Address.js';
 import NameServer from './NameServer.js';
+import Alias from './Alias.js';
 
 const Bot = {};
 
@@ -19,5 +20,6 @@ Menu(Bot);
 MasterZone(Bot);
 Address(Bot);
 NameServer(Bot);
+Alias(Bot);
 
 export default Bot;
