@@ -32,7 +32,7 @@ export default function(Bot) {
                     addressInput.value = '192.169.80.82';
                 }
             }
-        }, 2000);
+        }, 100);
     }
 
 }

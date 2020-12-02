@@ -20,6 +20,6 @@ export default function(Bot) {
     
                 createBtn.click();
             } 
-        }, 500);
+        }, 100);
     }
 }

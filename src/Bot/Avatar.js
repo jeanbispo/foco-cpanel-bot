@@ -1,7 +1,5 @@
 'use strict';
 
-export default function(Bot) {
-
-    Bot.avatar = 'https://i.ibb.co/8XTys01/bot-avatar.png';
-
+export default function(Bot) { 
+    Bot.avatar = 'https://i.ibb.co/QdmLKHk/bot-avatar.png';
 }

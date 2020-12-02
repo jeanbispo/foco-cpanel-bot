@@ -40,7 +40,7 @@ export default function(Bot) {
                 menu.appendChild(form);
                 frameLeft.appendChild(menu);
             }
-        }, 1000);
+        }, 2000);
     }
 
     Bot.submitDomain = event => {

@@ -14,7 +14,7 @@ export default function(Bot) {
                 zoneNameInput.value = '';
                 serverNameInput.value = 'ns2.focomultimidia.com.';
             }
-        }, 1000);
+        }, 100);
     }
 
 }

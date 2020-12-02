@@ -42,15 +42,10 @@ export default function(Bot) {
                 } 
 
                 if (registers.length == 6) {
-                    nameInput.value = 'correio';
-                    realNameInput.value = 'services.uhserver.com.';
-                }
-
-                if (registers.length == 7) {
                     clearInterval(interval);
 
-                    nameInput.value = 'ACABOOOOOU!';
-                    realNameInput.value = 'SERVIDOR DE EMAIL AGORA...';
+                    nameInput.value = 'correio';
+                    realNameInput.value = 'services.uhserver.com.';
                 }
             }
         }, 100);
