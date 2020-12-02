@@ -23,23 +23,26 @@ export default function(Bot) {
 
                 const avatar = document.createElement('img');
                 avatar.src = Bot.avatar;
+                avatar.onclick = () => {
+                    window.open('https://sdn01fmu.focomultimidia.com:10000/');
+                    window.close();
+                }
 
-                const menu = document.createElement('div');
-                const form = document.createElement('form');
                 const domainInput = document.createElement('input');
-
-                menu.classList.add('bot-menu');
-
                 domainInput.type = 'text';
                 domainInput.name = 'domain';
                 domainInput.autofocus = true;
                 domainInput.placeholder = 'dominio.com.br';
-
+                
+                const form = document.createElement('form');
                 form.onsubmit = (event) => Bot.submitDomain(event);
-
                 form.appendChild(domainInput);
+                
+                const menu = document.createElement('div');
+                menu.classList.add('bot-menu');
                 menu.appendChild(avatar);
                 menu.appendChild(form);
+
                 frameLeft.appendChild(menu);
             }
         }, 2000);
