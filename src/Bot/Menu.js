@@ -28,6 +28,8 @@ export default function(Bot) {
                 const form = document.createElement('form');
                 const domainInput = document.createElement('input');
 
+                menu.classList.add('bot-menu');
+
                 domainInput.type = 'text';
                 domainInput.name = 'domain';
                 domainInput.autofocus = true;

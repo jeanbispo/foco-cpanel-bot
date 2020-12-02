@@ -1,0 +1,29 @@
+.bot-menu {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    height: calc(100vh - 25px);
+}
+
+.bot-menu img {
+    padding: 2px;
+    width: 100px;
+    height: 100px;
+    cursor: pointer;
+    margin-top: 10px;
+    border-radius: 50%;
+    border: 3px dotted #003580;
+}
+
+.bot-menu input {
+    margin: 15px 0;
+    outline: none;
+    padding: 5px 10px;
+    text-align: center;
+    border-radius: 10px;
+    border: 1px solid #457bc9;
+}
+
+.bot-menu input:focus {
+    border: 2px solid #457bc9;
+}

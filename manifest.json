@@ -37,7 +37,8 @@
             ],
             "js": [
                 "./src/enableES6.js"
-            ]
+            ],
+            "all_frames": true
         }
     ]
 }

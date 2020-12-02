@@ -2,7 +2,7 @@
 
 export default function(Bot) { 
 
-    Bot.avatar = 'https://i.ibb.co/xHgpKdz/bot-avatar.png';
+    Bot.avatar = 'https://i.ibb.co/tBckqzd/avatar.png';
 
     Bot.changeTitle = title => document.title = title;
 
