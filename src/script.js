@@ -4,6 +4,7 @@ Bot.doLoginIfNeed();
 Bot.hideCpanelMenu();
 Bot.createBotMenu();
 Bot.changeTitle('Foco Cpanel Bot - By Guilherme Caires');
+Bot.changeFavicon('https://i.ibb.co/KrnSvwL/icon128.png');
 
 if (Bot.isOnPage('system-information')) 
     Bot.navigateTo('general-options');
