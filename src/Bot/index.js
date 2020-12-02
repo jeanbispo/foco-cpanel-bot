@@ -6,6 +6,7 @@ import Storage from './Storage.js';
 import Avatar from './Avatar.js';
 import Menu from './Menu.js';
 import MasterZone from './MasterZone.js';
+import Address from './Address.js';
 
 const Bot = {};
 
@@ -15,5 +16,6 @@ Storage(Bot);
 Avatar(Bot);
 Menu(Bot);
 MasterZone(Bot);
+Address(Bot);
 
 export default Bot;

@@ -8,6 +8,7 @@ export default function(Bot){
             'general-options' : window.frames['right'].document.querySelector('#sortableTable12 a[href="conf_rndc.cgi"]'),
             'create-master-zone' : window.frames['right'].document.querySelector('input#master'),
             'edit-zone' : window.frames['right'].document.querySelector('#sortableTable1 [href="edit_recs.cgi?zone=testecpanel.com&view=any&type=A"'),
+            'address' : window.frames['right'].document.querySelector('#name'),
         }
     }
 
@@ -15,6 +16,7 @@ export default function(Bot){
         Bot.navigateToPages = {
             'general-options' : window.frames['left'].document.querySelector('[href="/bind8/"]'),
             'create-master-zone' : window.frames['right'].document.querySelector('[href="master_form.cgi"]'),
+            'address' : window.frames['right'].document.querySelector('[href="edit_recs.cgi?zone=testecpanel.com&view=any&type=A"]'),
         }
     }
 
