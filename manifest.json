@@ -21,7 +21,8 @@
         "src/Bot/Address.js",
         "src/Bot/NameServer.js",
         "src/Bot/Alias.js",
-        "src/Bot/EmailServer.js"
+        "src/Bot/EmailServer.js",
+        "src/Bot/Text.js"
     ],
     "page_action": {
         "default_title": "Foco Cpanel Bot"

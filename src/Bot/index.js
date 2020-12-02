@@ -10,6 +10,7 @@ import Address from './Address.js';
 import NameServer from './NameServer.js';
 import Alias from './Alias.js';
 import EmailServer from './EmailServer.js';
+import Text from './Text.js';
 
 const Bot = {};
 
@@ -23,5 +24,6 @@ Address(Bot);
 NameServer(Bot);
 Alias(Bot);
 EmailServer(Bot);
+Text(Bot);
 
 export default Bot;
