@@ -19,10 +19,9 @@ export default function(Bot) {
             const firstAddress = window.frames['right'].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0]; 
 
             const nameInput = window.frames['right'].document.querySelector('#name');
-            const addressInput = window.frames['right'].document.querySelector('#value0');
+            const addressInput = window.frames['right'].document.querySelector('#value0[size="20"]');
 
-            if (nameInput) {
-                
+            if (addressInput) {
                 if (firstAddress) {
                     clearInterval(interval);
 

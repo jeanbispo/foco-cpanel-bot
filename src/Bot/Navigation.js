@@ -8,7 +8,8 @@ export default function(Bot){
             'general-options' : window.frames[1].document.querySelector('#sortableTable12 a[href="conf_rndc.cgi"]'),
             'create-master-zone' : window.frames[1].document.querySelector('input#master'),
             'edit-zone' : window.frames[1].document.querySelector('#sortableTable1 [href="edit_recs.cgi?zone=testecpanel.com&view=any&type=A"'),
-            'address' : window.frames[1].document.evaluate("//font[contains(., 'Endereço Registros')]", document, null, XPathResult.ANY_TYPE, null ).iterateNext(),
+            'address' : window.frames[1].document.evaluate("//font[contains(., 'Endereço Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext(),
+            'name-server' : window.frames[1].document.evaluate("//font[contains(., 'Servidor de Nomes Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext(),
         }
     }
 
@@ -34,16 +35,21 @@ export default function(Bot){
         }, 100);
     }
 
-    Bot.isOnPage = page => {
+    Bot.isOnPage = async (page) => {
         const interval = setInterval(() => {
             Bot.loadPages();
+            const pageSelector = Bot.pages[page];
 
-            const isOnPage = Bot.pages[page];
+            if (pageSelector) {
+                clearInterval(interval);
 
-            if (isOnPage) clearInterval(interval);
-        }, 100);
-
-        return true;
+                if (pageSelector != null && pageSelector != undefined && pageSelector != '') {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }, 1000);
     }
     
 }

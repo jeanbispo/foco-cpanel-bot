@@ -9,8 +9,12 @@ Bot.hideCpanelMenu();
 
 Bot.createBotMenu();
 
-if (Bot.isOnPage('create-master-zone')) 
+
+if (Bot.isOnPage('create-master-zone'))
     Bot.createMasterZone();
 
-if (Bot.isOnPage('address')) 
+if (Bot.isOnPage('address'))
     Bot.createAddress();
+
+if (Bot.isOnPage('name-server'))
+    Bot.createNameServer();
