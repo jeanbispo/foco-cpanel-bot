@@ -10,6 +10,7 @@ export default function(Bot){
             'edit-zone' : window.frames[1].document.querySelector('#sortableTable1 [href="edit_recs.cgi?zone=testecpanel.com&view=any&type=A"'),
             'address' : window.frames[1].document.evaluate("//font[contains(., 'Endereço Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext(),
             'name-server' : window.frames[1].document.evaluate("//font[contains(., 'Servidor de Nomes Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext(),
+            'email-server' : window.frames[1].document.evaluate("//font[contains(., 'Servidor de Email Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext(),
         }
     }
 

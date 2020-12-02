@@ -19,8 +19,8 @@ if (Bot.isOnPage('name-server'))
 if (Bot.isOnPage('alias')) 
     Bot.createAlias();
 
-// if (Bot.isOnPage('email-server')) 
-//     Bot.createEmailServer();
+if (Bot.isOnPage('email-server')) 
+    Bot.createEmailServer();
 
 // if (Bot.isOnPage('text')) 
 //     Bot.createText();

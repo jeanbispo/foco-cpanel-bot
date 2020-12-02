@@ -9,6 +9,7 @@ import MasterZone from './MasterZone.js';
 import Address from './Address.js';
 import NameServer from './NameServer.js';
 import Alias from './Alias.js';
+import EmailServer from './EmailServer.js';
 
 const Bot = {};
 
@@ -21,5 +22,6 @@ MasterZone(Bot);
 Address(Bot);
 NameServer(Bot);
 Alias(Bot);
+EmailServer(Bot);
 
 export default Bot;
