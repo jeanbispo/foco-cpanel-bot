@@ -4,6 +4,7 @@
     "version": "1.0.0",
     "description": "Crie zonas master no Cpanel da Foco Multimídia com poucos cliques!",
     "icons": {
+       "16": "./src/assets/icon16.png",
        "48": "./src/assets/icon48.png",
        "128": "./src/assets/icon128.png"
     },
@@ -19,9 +20,6 @@
         "src/Bot/Storage.js"
     ],
     "page_action": {
-        "default_icon": {
-            "19" : "./src/assets/icon19.png"
-        },
         "default_title": "Foco Cpanel Bot"
     },
     "content_scripts": [
