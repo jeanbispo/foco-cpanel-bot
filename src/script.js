@@ -3,6 +3,7 @@ import Bot from './Bot/index.js';
 Bot.doLoginIfNeed();
 Bot.hideCpanelMenu();
 Bot.createBotMenu();
+Bot.changeTitle('Foco Cpanel Bot - By Guilherme Caires');
 
 if (Bot.isOnPage('system-information')) 
     Bot.navigateTo('general-options');
