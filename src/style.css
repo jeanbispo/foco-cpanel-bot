@@ -4,6 +4,26 @@
     flex-direction: column;
 }
 
+.bot-menu .speach-boubble {
+    padding: 8px;
+    max-width: 95%;
+    color: #fff;
+    margin-top: 20px;
+    position: relative;
+    border-radius: 15px;
+    background: #457bc9;
+}
+
+.bot-menu .speach-boubble:after {
+    left: 40%;
+    top: -8px;
+    content: "";
+    position: absolute;
+    border-bottom: 20px solid #457bc9;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+}
+
 .bot-menu img {
     padding: 2px;
     width: 100px;

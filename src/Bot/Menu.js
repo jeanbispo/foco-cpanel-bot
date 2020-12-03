@@ -28,6 +28,10 @@ export default function(Bot) {
                     window.close();
                 }
 
+                const speachBoubble = document.createElement('div');
+                speachBoubble.classList.add('speach-boubble');
+                speachBoubble.innerText = 'Crie uma zona master no campo abaixo!';
+
                 const domainInput = document.createElement('input');
                 domainInput.type = 'text';
                 domainInput.name = 'domain';
@@ -46,6 +50,7 @@ export default function(Bot) {
                 const menu = document.createElement('div');
                 menu.classList.add('bot-menu');
                 menu.appendChild(avatar);
+                menu.appendChild(speachBoubble);
                 menu.appendChild(form);
                 menu.appendChild(logoutLink);
 
