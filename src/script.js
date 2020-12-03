@@ -3,7 +3,7 @@ import Bot from './Bot/index.js';
 Bot.doLoginIfNeed();
 Bot.hideCpanelMenu();
 Bot.createBotMenu();
-Bot.changeTitle('Foco Cpanel Bot - By Guilherme Caires');
+Bot.changeTitle('Cpanel Bot: Deixa comigo!');
 Bot.changeFavicon('https://i.ibb.co/KrnSvwL/icon128.png');
 
 if (Bot.isOnPage('system-information')) 
