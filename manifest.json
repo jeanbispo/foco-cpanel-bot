@@ -40,5 +40,8 @@
             ],
             "all_frames": true
         }
-    ]
+    ],
+    "background": {
+        "scripts": ["./src/hot-reload.js"]
+    }
 }
