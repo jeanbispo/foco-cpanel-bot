@@ -1,7 +1,7 @@
 import Login from './Login.js';
 import Navigation from './Navigation.js';
 import Storage from './Storage.js';
-import Details from './Details.js';
+import Page from './Page.js';
 import Menu from './Menu.js';
 import MasterZone from './MasterZone.js';
 import Address from './Address.js';
@@ -15,7 +15,7 @@ const Bot = {};
 Login(Bot);
 Storage(Bot);
 Navigation(Bot);
-Details(Bot);
+Page(Bot);
 Menu(Bot);
 MasterZone(Bot);
 Address(Bot);

@@ -1,8 +1,6 @@
 export default function(Bot) { 
 
-    Bot.avatar = 'https://i.ibb.co/tBckqzd/avatar.png';
-
-    Bot.changeTitle = title => document.title = title;
+    Bot.changePageTitle = title => document.title = title;
 
     Bot.changeFavicon = link => {
         let favicon = document.querySelector('link[rel="icon"]');

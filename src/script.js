@@ -6,7 +6,7 @@ Bot.hideCpanelMenu();
 
 Bot.createBotMenu();
 
-Bot.changeTitle('Cpanel Bot: Deixa comigo!');
+Bot.changePageTitle('Cpanel Bot: Deixa comigo!');
 
 Bot.changeFavicon('https://i.ibb.co/KrnSvwL/icon128.png');
 

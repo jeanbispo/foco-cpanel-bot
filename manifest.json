@@ -14,7 +14,7 @@
         "src/Bot/index.js",
         "src/Bot/Login.js",
         "src/Bot/Navigation.js",
-        "src/Bot/Details.js",
+        "src/Bot/Page.js",
         "src/Bot/Storage.js",
         "src/Bot/Menu.js",
         "src/Bot/MasterZone.js",

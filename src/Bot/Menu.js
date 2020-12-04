@@ -1,5 +1,7 @@
 export default function(Bot) {
 
+    Bot.avatar = 'https://i.ibb.co/tBckqzd/avatar.png';
+
     Bot.hideCpanelMenu = () => {
         const interval = setInterval(() => {
             const wrapper = window.frames['left'].document.querySelector('.wrapper');
@@ -20,7 +22,7 @@ export default function(Bot) {
                 clearInterval(interval);
 
                 const avatar = document.createElement('img');
-                avatar.src = Bot.avatar;
+                avatar.src = 'https://i.ibb.co/tBckqzd/avatar.png';
                 avatar.onclick = () => {
                     window.open('https://sdn01fmu.focomultimidia.com:10000/');
                     window.close();
