@@ -1,28 +1,25 @@
 import Bot from './Bot/index.js';
 
 Bot.doLoginIfNeed();
+
 Bot.hideCpanelMenu();
+
 Bot.createBotMenu();
+
 Bot.changeTitle('Cpanel Bot: Deixa comigo!');
+
 Bot.changeFavicon('https://i.ibb.co/KrnSvwL/icon128.png');
 
-if (Bot.isOnPage('system-information')) 
-    Bot.navigateTo('general-options');
+Bot.doOnPage( 'system-information', () => Bot.navigate('general-options') );
 
-if (Bot.isOnPage('create-master-zone'))
-    Bot.createMasterZone();
+Bot.doOnPage( 'create-master-zone', () => Bot.createMasterZone() );
 
-if (Bot.isOnPage('address'))
-    Bot.createAddress();
+Bot.doOnPage( 'address', () => Bot.createAddress() );
 
-if (Bot.isOnPage('name-server'))
-    Bot.createNameServer();
+Bot.doOnPage( 'name-server', () => Bot.createNameServer() );
 
-if (Bot.isOnPage('alias')) 
-    Bot.createAlias();
+Bot.doOnPage( 'alias', () => Bot.createAlias() );
 
-if (Bot.isOnPage('email-server')) 
-    Bot.createEmailServer();
+Bot.doOnPage( 'email-server', () => Bot.createEmailServer() );
 
-if (Bot.isOnPage('text')) 
-    Bot.createText();
+Bot.doOnPage( 'text', () => Bot.createText() );

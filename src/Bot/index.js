@@ -13,8 +13,8 @@ import Text from './Text.js';
 const Bot = {};
 
 Login(Bot);
-Navigation(Bot);
 Storage(Bot);
+Navigation(Bot);
 Details(Bot);
 Menu(Bot);
 MasterZone(Bot);
