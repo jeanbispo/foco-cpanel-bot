@@ -1,5 +1,3 @@
-'use strict';
-
 import Login from './Login.js';
 import Navigation from './Navigation.js';
 import Storage from './Storage.js';

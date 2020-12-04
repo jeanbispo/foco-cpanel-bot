@@ -1,5 +1,3 @@
-'use strict';
-
 export default function(Bot) {
 
     Bot.setStorage = (key, value) => localStorage.setItem(key, value);
