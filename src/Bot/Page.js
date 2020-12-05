@@ -1,14 +1,14 @@
 export default function(Bot) { 
 
     Bot.pages = {
-        'system-information' : `window.frames[1].document.evaluate("//font[contains(., "This login")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'general-options'    : `window.frames[1].document.evaluate("//font[contains(., "BIND 8")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'create-master-zone' : `window.frames[1].document.evaluate("//font[contains(., "Criar Zona Master")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'edit-zone'          : `window.frames[1].document.evaluate("//font[contains(., "Editar a Zona Master")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'address'            : `window.frames[1].document.evaluate("//font[contains(., "Endereço Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'name-server'        : `window.frames[1].document.evaluate("//font[contains(., "Servidor de Nomes Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'email-server'       : `window.frames[1].document.evaluate("//font[contains(., "Servidor de Email Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
-        'text'               : `window.frames[1].document.evaluate("//font[contains(., "Texto Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'system-information' : `window.frames[1].document.evaluate("//font[contains(., 'This login')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'general-options'    : `window.frames[1].document.evaluate("//font[contains(., 'BIND 8')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'create-master-zone' : `window.frames[1].document.evaluate("//font[contains(., 'Criar Zona Master')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'edit-zone'          : `window.frames[1].document.evaluate("//font[contains(., 'Editar a Zona Master')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'address'            : `window.frames[1].document.evaluate("//font[contains(., 'Endereço Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'name-server'        : `window.frames[1].document.evaluate("//font[contains(., 'Servidor de Nomes Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'email-server'       : `window.frames[1].document.evaluate("//font[contains(., 'Servidor de Email Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'text'               : `window.frames[1].document.evaluate("//font[contains(., 'Texto Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
     }
 
     Bot.changePageTitle = title => document.title = title;
