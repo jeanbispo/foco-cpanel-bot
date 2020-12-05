@@ -3,14 +3,15 @@ export default function(Bot) {
     Bot.avatar = 'https://i.ibb.co/tBckqzd/avatar.png';
 
     Bot.hideCpanelMenu = () => {
-        const interval = setInterval(() => {
-            const wrapper = window.frames['left'].document.querySelector('.wrapper');
-    
-            if (wrapper) {
-                clearInterval(interval);
-                
-                wrapper.style.display = 'none';
-            }
+        const interval = setInterval( () => {
+
+            if ( !window.frames[0] ) return;
+
+            const wrapper = window.frames[0].document.querySelector('.wrapper');
+            wrapper.style.display = 'none';
+            
+            clearInterval(interval);
+            
         }, 100);
     }
 
