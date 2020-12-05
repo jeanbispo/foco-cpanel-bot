@@ -11,14 +11,18 @@ export default function(Bot) {
             wrapper.style.display = 'none';
             
             clearInterval(interval);
-            
+
         }, 100);
     }
 
     Bot.createBotMenu = () => {
-        const leftFrame = window.frames[0].document.body;
+        const interval = setInterval( () => {
 
-        Bot.waitForElement(window.frames[0], () => {
+            if ( !window.frames[0] ) return;
+            clearInterval(interval);
+
+            const leftFrame = window.frames[0].document.body;
+
             Bot.menu = document.createElement('div');
             Bot.menu.classList.add('bot-menu');
     
@@ -28,7 +32,8 @@ export default function(Bot) {
             Bot.addLogout();
             
             leftFrame.appendChild(Bot.menu);
-        });
+            
+        }, 100);
     }
 
     Bot.addAvatar = () => {
