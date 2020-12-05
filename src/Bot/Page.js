@@ -1,14 +1,14 @@
 export default function(Bot) { 
 
     Bot.pages = {
-        'system-information' : '//font[contains(., "This login")]',
-        'general-options'    : '//font[contains(., "BIND 8")]',
-        'create-master-zone' : '//font[contains(., "Criar Zona Master")]',
-        'edit-zone'          : '//font[contains(., "Editar a Zona Master")]',
-        'address'            : '//font[contains(., "Endereço Registros")]',
-        'name-server'        : '//font[contains(., "Servidor de Nomes Registros")]',
-        'email-server'       : '//font[contains(., "Servidor de Email Registros")]',
-        'text'               : '//font[contains(., "Texto Registros")]',
+        'system-information' : `window.frames[1].document.evaluate("//font[contains(., "This login")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'general-options'    : `window.frames[1].document.evaluate("//font[contains(., "BIND 8")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'create-master-zone' : `window.frames[1].document.evaluate("//font[contains(., "Criar Zona Master")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'edit-zone'          : `window.frames[1].document.evaluate("//font[contains(., "Editar a Zona Master")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'address'            : `window.frames[1].document.evaluate("//font[contains(., "Endereço Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'name-server'        : `window.frames[1].document.evaluate("//font[contains(., "Servidor de Nomes Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'email-server'       : `window.frames[1].document.evaluate("//font[contains(., "Servidor de Email Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
+        'text'               : `window.frames[1].document.evaluate("//font[contains(., "Texto Registros")],window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()`,
     }
 
     Bot.changePageTitle = title => document.title = title;
@@ -26,25 +26,16 @@ export default function(Bot) {
     }
 
     Bot.waitForElement = (selector, callback, maxTimes = 6, time = 500) => {
-        const rightFrame = window.frames['right'];
-
         const tryAgain = () => {
             maxTimes--;
             setTimeout(() => Bot.waitForElement(selector, callback, maxTimes), time);
         }
 
-        if (rightFrame) {
-            const element = rightFrame.document
-                .evaluate(selector, rightFrame.document, null, XPathResult.ANY_TYPE, null).iterateNext();
-
-            return element ? callback() : tryAgain();
+        if (window.frames[0] || document.body) {
+            return selector ? callback() : tryAgain();
         } else tryAgain();
     }
 
-    Bot.doOnPage = (page, callback) => {
-        const documentSelector = Bot.pages[page];
-
-        return Bot.waitForElement(documentSelector, callback);
-    };
+    Bot.doOnPage = (page, callback) => Bot.waitForElement(Bot.pages[page], callback);
     
 }

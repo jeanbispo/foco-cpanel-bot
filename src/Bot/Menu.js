@@ -15,23 +15,19 @@ export default function(Bot) {
     }
 
     Bot.createBotMenu = () => {
-        const interval = setInterval(() => {
-           const popup = window.frames['left'].document.querySelector('#popup');
+        const leftFrame = window.frames[0].document.body;
+
+        Bot.waitForElement(window.frames[0], () => {
+            Bot.menu = document.createElement('div');
+            Bot.menu.classList.add('bot-menu');
+    
+            Bot.addAvatar();
+            Bot.addSpeachBoubble();
+            Bot.addForm();
+            Bot.addLogout();
             
-            if (popup) {
-                clearInterval(interval);
-
-                Bot.menu = document.createElement('div');
-                Bot.menu.classList.add('bot-menu');
-
-                Bot.addAvatar();
-                Bot.addSpeachBoubble();
-                Bot.addForm();
-                Bot.addLogout();
-                
-                popup.appendChild(Bot.menu);
-            }
-        }, 2000);
+            leftFrame.appendChild(Bot.menu);
+        });
     }
 
     Bot.addAvatar = () => {
