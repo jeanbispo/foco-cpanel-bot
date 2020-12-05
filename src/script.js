@@ -1,7 +1,5 @@
 import Bot from './Bot/index.js';
 
-Bot.doLoginIfNeed();
-
 Bot.hideCpanelMenu();
 
 Bot.createBotMenu();

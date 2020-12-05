@@ -1,4 +1,3 @@
-import Login from './Login.js';
 import Navigation from './Navigation.js';
 import Storage from './Storage.js';
 import Page from './Page.js';
@@ -12,7 +11,6 @@ import Text from './Text.js';
 
 const Bot = {};
 
-Login(Bot);
 Storage(Bot);
 Navigation(Bot);
 Page(Bot);
