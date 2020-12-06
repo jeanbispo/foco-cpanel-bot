@@ -2,16 +2,24 @@ export default function(Bot) {
 
     Bot.createNameServer = () => {
         const interval = setInterval(() => {
+            const secondNameServer = window.frames[1].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0];
+
             const zoneNameInput = window.frames[1].document.querySelector('#name');
             const serverNameInput = window.frames[1].document.querySelector('#value0');
 
-            if (zoneNameInput) {
-                clearInterval(interval);
+            if ( zoneNameInput && serverNameInput ) {
 
-                zoneNameInput.value = '';
-                serverNameInput.value = 'ns2.focomultimidia.com.';
+                if ( secondNameServer ) {
+                    clearInterval(interval);
 
-                Bot.speachBoubble.innerText = 'Aqui só precisa do segundo DNS...';
+                    Bot.speachBoubble.innerText = 'Por aqui, encerramos!';
+                } else {
+
+                    zoneNameInput.value = '';
+                    serverNameInput.value = 'ns2.focomultimidia.com.';
+    
+                    Bot.speachBoubble.innerText = 'Aqui só precisa do segundo DNS...';
+                }
             }
         }, 100);
     }

@@ -2,16 +2,17 @@ export default function(Bot) {
 
     Bot.createEmailServer = () => {
         const interval = setInterval(() => {
-            const isOnEmailServer = window.frames[1].document.evaluate("//font[contains(., 'Servidor de Email Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext();
             const emailServerInput = window.frames['right'].document.querySelector('#value1');
             const priorityInput = window.frames['right'].document.querySelector('#value0');
 
             const registers = window.frames['right'].document.querySelectorAll('tr[bgcolor="#f5f5f5"]'); 
 
-            if (isOnEmailServer) {
-                if (!registers.length) {
+            if ( emailServerInput && priorityInput ) {
+                if ( registers[0] ) {
                     clearInterval(interval);
 
+                    Bot.speachBoubble.innerText = 'Por aqui, encerramos. Mas anime-se, só falta "texto"!';
+                } else {
                     priorityInput.value = '10';
                     emailServerInput.value = 'mx.uhserver.com.';
 

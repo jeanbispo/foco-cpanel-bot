@@ -27,7 +27,7 @@ export default function(Bot) {
                     nameInput.value = 'imap';
                     realNameInput.value = 'imap.uhserver.com.';
 
-                    Bot.speachBoubble.innerText = 'Imap!';
+                    Bot.speachBoubble.innerText = 'Imaaaaaap!';
 
                 } 
 
@@ -54,12 +54,16 @@ export default function(Bot) {
                 } 
 
                 if (registers.length == 6) {
-                    clearInterval(interval);
-
                     nameInput.value = 'correio';
                     realNameInput.value = 'services.uhserver.com.';
 
                     Bot.speachBoubble.innerText = 'E por último: correio!';
+                }
+
+                if (registers.length == 7) {
+                    clearInterval(interval);
+
+                    Bot.speachBoubble.innerText = 'Finalmente acabou... O alias...';
                 }
             }
         }, 100);
