@@ -53,6 +53,7 @@
 }
 
 .bot-menu form input[type=submit] {
+    width: 40px;
     padding: 5px;
     color: #fff;
     cursor: pointer;
@@ -61,8 +62,8 @@
 }
 
 .bot-menu form input[type=submit]:focus {
-    background-color: #003d92;
     border-color: #003d92;
+    background-color: #003d92;
 }
 
 .bot-menu input {

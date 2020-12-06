@@ -48,6 +48,7 @@ export default function(Bot) {
         const avatar = document.createElement('img');
 
         avatar.src = 'https://i.ibb.co/tBckqzd/avatar.png';
+        avatar.title = 'Recarregar página';
         avatar.onclick = () => {
             window.open('https://sdn01fmu.focomultimidia.com:10000/');
             window.close();
