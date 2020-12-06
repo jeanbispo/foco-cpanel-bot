@@ -54,11 +54,12 @@ export default function(Bot) {
     }
 
     Bot.addSpeachBoubble = () => {
-        const speachBoubble = document.createElement('div');
-        speachBoubble.classList.add('speach-boubble');
-        speachBoubble.innerText = 'Crie uma zona master no campo abaixo!';
+        Bot.speachBoubble = document.createElement('div');
 
-        Bot.menu.appendChild(speachBoubble);
+        Bot.speachBoubble.classList.add('speach-boubble');
+        Bot.speachBoubble.innerText = 'Crie uma zona master no campo abaixo!';
+
+        Bot.menu.appendChild(Bot.speachBoubble);
     }
 
     Bot.addForm = () => {
@@ -92,7 +93,8 @@ export default function(Bot) {
         Bot.domain = event.target[0].value;
         Bot.setStorage('domain', Bot.domain);
         
-        Bot.domain = '';
+        event.target[0].value = '';
+        Bot.speachBoubble.innerText = 'Deixa comigo!';
 
         Bot.navigate('create-master-zone');
     }

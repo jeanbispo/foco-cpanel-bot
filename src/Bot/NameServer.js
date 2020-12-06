@@ -10,6 +10,8 @@ export default function(Bot) {
 
                 zoneNameInput.value = '';
                 serverNameInput.value = 'ns2.focomultimidia.com.';
+
+                Bot.speachBoubble.innerText = 'Aqui só precisa do segundo DNS...';
             }
         }, 100);
     }

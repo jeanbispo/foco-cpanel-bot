@@ -9,6 +9,8 @@ export default function(Bot) {
                 clearInterval(interval);
 
                 messageInput.value = 'v=spf1 include:spf.whservidor.com ?all';
+
+                Bot.speachBoubble.innerText = 'Última fase! Só adicionar o SPF...';
             }
         }, 100);
     }

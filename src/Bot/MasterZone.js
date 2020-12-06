@@ -12,8 +12,10 @@ export default function(Bot) {
         
                 domainInput.value = Bot.getStorage('domain');
                 masterInput.value = 'ns1.focomultimidia.com';
-                emailInput.value = 'fabricio.focomultimidia.com';
+                emailInput.value = 'fabricio@focomultimidia.com';
                 ipInput.value = '192.169.80.82';
+
+                Bot.speachBoubble.innerText = 'O domínio ' + domainInput.value + ' está certo? Então é só criar!';
             } 
         }, 1000);
     }

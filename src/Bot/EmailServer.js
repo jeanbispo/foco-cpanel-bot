@@ -14,6 +14,8 @@ export default function(Bot) {
 
                     priorityInput.value = '10';
                     emailServerInput.value = 'mx.uhserver.com.';
+
+                    Bot.speachBoubble.innerText = 'Aqui é só um!';
                 }
             }
         }, 100);

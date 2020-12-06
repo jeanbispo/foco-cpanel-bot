@@ -25,9 +25,13 @@ export default function(Bot) {
 
                     nameInput.value = 'www';
                     addressInput.value = '192.169.80.82';
+
+                    Bot.speachBoubble.innerText = 'Agora com "www"...';
                 } else {
                     nameInput.value = '';
                     addressInput.value = '192.169.80.82';
+
+                    Bot.speachBoubble.innerText = 'Primeiro passo é adicionar o ip."';
                 }
             }
         }, 100);
