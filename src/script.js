@@ -2,7 +2,7 @@ import Bot from './Bot/index.js';
 
 const interval = setInterval(() => {
 
-    if ( !window.frames[0].document.querySelector('.wrapper') ) return;
+    if ( !window.frames[0] || !window.frames[0].document.querySelector('.wrapper') ) return;
 
     clearInterval(interval);
 
