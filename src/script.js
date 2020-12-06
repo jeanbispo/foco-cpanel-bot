@@ -1,23 +1,30 @@
 import Bot from './Bot/index.js';
 
-Bot.hideCpanelMenu();
+const interval = setInterval(() => {
 
-Bot.createBotMenu();
+    if ( !window.frames[0].document.querySelector('.wrapper') ) return;
 
-Bot.changePageTitle('Cpanel Bot: Deixa comigo!');
+    clearInterval(interval);
 
-Bot.changeFavicon('https://i.ibb.co/KrnSvwL/icon128.png');
+    Bot.hideCpanelMenu();
 
-Bot.doOnPage( 'system-information', () => Bot.navigate('general-options') );
+    Bot.createBotMenu();
 
-Bot.doOnPage( 'create-master-zone', () => Bot.createMasterZone() );
+    Bot.changePageTitle('Cpanel Bot: Deixa comigo!');
 
-Bot.doOnPage( 'address', () => Bot.createAddress() );
+    Bot.changeFavicon('https://i.ibb.co/KrnSvwL/icon128.png');
 
-Bot.doOnPage( 'name-server', () => Bot.createNameServer() );
+    Bot.doOnPage( 'system-information', () => Bot.navigate('general-options') );
 
-Bot.doOnPage( 'alias', () => Bot.createAlias() );
+    Bot.doOnPage( 'create-master-zone', () => Bot.createMasterZone() );
 
-Bot.doOnPage( 'email-server', () => Bot.createEmailServer() );
+    Bot.doOnPage( 'address', () => Bot.createAddress() );
 
-Bot.doOnPage( 'text', () => Bot.createText() );
+    Bot.doOnPage( 'name-server', () => Bot.createNameServer() );
+
+    Bot.doOnPage( 'alias', () => Bot.createAlias() );
+
+    Bot.doOnPage( 'email-server', () => Bot.createEmailServer() );
+    
+    Bot.doOnPage( 'text', () => Bot.createText() );
+}, 100);

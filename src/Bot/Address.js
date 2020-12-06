@@ -14,10 +14,10 @@ export default function(Bot) {
 
     Bot.createAddress = () => {
         const interval = setInterval(() => {
-            const firstAddress = window.frames['right'].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0]; 
-
-            const nameInput = window.frames['right'].document.querySelector('#name');
-            const addressInput = window.frames['right'].document.querySelector('#value0[size="20"]');
+            const firstAddress = window.frames[0].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0]; 
+            
+            const nameInput = window.frames[0].document.querySelector('#name');
+            const addressInput = window.frames[0].document.querySelector('#value0[size="20"]');
 
             if (addressInput) {
                 if (firstAddress) {

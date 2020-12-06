@@ -1,4 +1,4 @@
-import Navigation from './Navigation.js';
+import Navigate from './Navigate.js';
 import Storage from './Storage.js';
 import Page from './Page.js';
 import Menu from './Menu.js';
@@ -12,7 +12,7 @@ import Text from './Text.js';
 const Bot = {};
 
 Storage(Bot);
-Navigation(Bot);
+Navigate(Bot);
 Page(Bot);
 Menu(Bot);
 MasterZone(Bot);

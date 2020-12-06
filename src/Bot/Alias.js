@@ -2,13 +2,12 @@ export default function(Bot) {
 
     Bot.createAlias = () => {
         const interval = setInterval(() => {
-            const isOnAlias = window.frames[1].document.evaluate("//font[contains(., 'Alias Registros')]", window.frames[1].document, null, XPathResult.ANY_TYPE, null ).iterateNext()
-            const nameInput = window.frames['right'].document.querySelector('#name');
-            const realNameInput = window.frames['right'].document.querySelector('#value0[size="30"]');
+            const nameInput = window.frames[1].document.querySelector('#name');
+            const realNameInput = window.frames[1].document.querySelector('#value0[size="30"]');
 
-            const registers = window.frames['right'].document.querySelectorAll('tr[bgcolor="#f5f5f5"]'); 
+            const registers = window.frames[1].document.querySelectorAll('tr[bgcolor="#f5f5f5"]'); 
 
-            if (isOnAlias) {
+            if ( realNameInput ) {
                 if (!registers.length) {
                     nameInput.value = 'smtp';
                     realNameInput.value = 'smtp.uhserver.com.';

@@ -1,43 +1,49 @@
 export default function(Bot) {
 
-    Bot.avatar = 'https://i.ibb.co/tBckqzd/avatar.png';
-
     Bot.hideCpanelMenu = () => {
-        const interval = setInterval( () => {
+        const wrapper = window.frames[0].document.querySelector('.wrapper');
 
-            if ( !window.frames[0] ) return;
-
-            const wrapper = window.frames[0].document.querySelector('.wrapper');
-            wrapper.style.display = 'none';
-            
-            clearInterval(interval);
-
-        }, 100);
-    }
+        wrapper.style.display = 'none';
+    };
 
     Bot.createBotMenu = () => {
-        const interval = setInterval( () => {
+        const leftFrame = window.frames[0].document.body;
 
-            if ( !window.frames[0] ) return;
-            clearInterval(interval);
+        Bot.menu = document.createElement('div');
+        Bot.menu.classList.add('bot-menu');
 
-            const leftFrame = window.frames[0].document.body;
+        Bot.addAvatar();
+        Bot.addSpeachBoubble();
+        Bot.addForm();
+        Bot.addLogout();
+        Bot.addNavigationLinks();
+        
+        leftFrame.appendChild(Bot.menu);
+    }
 
-            Bot.menu = document.createElement('div');
-            Bot.menu.classList.add('bot-menu');
-    
-            Bot.addAvatar();
-            Bot.addSpeachBoubble();
-            Bot.addForm();
-            Bot.addLogout();
-            
-            leftFrame.appendChild(Bot.menu);
-            
-        }, 100);
+    Bot.addNavigationLinks = () => {
+        const navigationLinks = document.createElement('div');
+        navigationLinks.id = 'botNavigation';
+
+        const generalOptions = document.createElement('a');
+        generalOptions.target = 'right';
+        generalOptions.id = 'general-options';
+        generalOptions.href = 'https://sdn01fmu.focomultimidia.com:10000/bind8/'
+
+        const createMasterZone = document.createElement('a');
+        createMasterZone.target = 'right';
+        createMasterZone.id = 'create-master-zone';
+        createMasterZone.href = 'https://sdn01fmu.focomultimidia.com:10000/bind8/master_form.cgi/'
+
+        navigationLinks.appendChild(generalOptions);
+        navigationLinks.appendChild(createMasterZone);
+
+        Bot.menu.appendChild(navigationLinks);
     }
 
     Bot.addAvatar = () => {
         const avatar = document.createElement('img');
+
         avatar.src = 'https://i.ibb.co/tBckqzd/avatar.png';
         avatar.onclick = () => {
             window.open('https://sdn01fmu.focomultimidia.com:10000/');
@@ -72,6 +78,7 @@ export default function(Bot) {
 
     Bot.addLogout = () => {
         const logoutLink = document.createElement('a');
+
         logoutLink.href = '/session_login.cgi?logout=1';
         logoutLink.innerText = 'Sair';
         logoutLink.id = 'logout';
@@ -84,10 +91,10 @@ export default function(Bot) {
 
         Bot.domain = event.target[0].value;
         Bot.setStorage('domain', Bot.domain);
+        
+        Bot.domain = '';
 
-        event.target[0].value = 'Deixa comigo!';
-
-        Bot.navigateTo('create-master-zone');
+        Bot.navigate('create-master-zone');
     }
 
 }
