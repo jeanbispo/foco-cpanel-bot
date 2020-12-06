@@ -23,11 +23,7 @@
     "content_scripts": [
         {
             "matches": ["https://sdn01fmu.focomultimidia.com:10000/*"],
-            "css": ["./src/style.css"],
-            "js": ["./src/enableES6.js"]
-        },
-        {
-            "matches": ["https://sdn01fmu.focomultimidia.com:10000/*"],
+            "js": ["./src/enableES6.js"],
             "css": ["./src/style.css"],
             "all_frames": true
         }

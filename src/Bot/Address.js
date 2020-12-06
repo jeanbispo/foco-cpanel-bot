@@ -14,25 +14,34 @@ export default function(Bot) {
 
     Bot.createAddress = () => {
         const interval = setInterval(() => {
-            const firstAddress = window.frames[0].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0]; 
-            
-            const nameInput = window.frames[0].document.querySelector('#name');
-            const addressInput = window.frames[0].document.querySelector('#value0[size="20"]');
+            const firstAddress = window.frames[1].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0]; 
+            const secondAddress = window.frames[1].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[1]; 
 
-            if (addressInput) {
-                if (firstAddress) {
+            const nameInput = window.frames[1].document.querySelector('#name');
+            const addressInput = window.frames[1].document.querySelector('#value0[size="20"]');
+            
+            if ( addressInput && nameInput ) {
+
+                if ( secondAddress ) {
                     clearInterval(interval);
+
+                    Bot.speachBoubble.innerText = 'Por aqui, encerramos!';
+                    
+                } else if ( firstAddress ) {
 
                     nameInput.value = 'www';
                     addressInput.value = '192.169.80.82';
 
                     Bot.speachBoubble.innerText = 'Agora com "www"...';
+
                 } else {
+                    
                     nameInput.value = '';
                     addressInput.value = '192.169.80.82';
 
-                    Bot.speachBoubble.innerText = 'Primeiro passo é adicionar o ip."';
+                    Bot.speachBoubble.innerText = 'Primeiro passo é add o ip."';
                 }
+
             }
         }, 100);
     }

@@ -1,9 +1,10 @@
 import Bot from './Bot/index.js';
 
 const interval = setInterval(() => {
-
-    if ( !window.frames[0] || !window.frames[0].document.querySelector('.wrapper') ) return;
-
+    
+    if ( !window || !window.frames[0] || !window.frames[1] ) return;
+    if ( !window.frames[0].document || !window.frames[1].document ) return;
+    
     clearInterval(interval);
 
     Bot.hideCpanelMenu();
@@ -25,6 +26,7 @@ const interval = setInterval(() => {
     Bot.doOnPage( 'alias', () => Bot.createAlias() );
 
     Bot.doOnPage( 'email-server', () => Bot.createEmailServer() );
-    
+
     Bot.doOnPage( 'text', () => Bot.createText() );
-}, 100);
+
+}, 1000);
