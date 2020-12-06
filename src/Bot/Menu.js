@@ -14,8 +14,8 @@ export default function(Bot) {
 
         Bot.addAvatar();
         Bot.addSpeachBoubble();
-        Bot.addForm();
-        Bot.addSearchForm();
+        Bot.addCreateMasterZone();
+        Bot.addZoneSearch();
         Bot.addHome();
         Bot.addLogout();
         Bot.addCredits();
@@ -65,7 +65,7 @@ export default function(Bot) {
         Bot.menu.appendChild(Bot.speachBoubble);
     }
 
-    Bot.addForm = () => {
+    Bot.addCreateMasterZone = () => {
         const form = document.createElement('form');
         const domainInput = document.createElement('input');
         const submitBtn = document.createElement('input');
@@ -85,7 +85,7 @@ export default function(Bot) {
         Bot.menu.appendChild(form);
     }
 
-    Bot.addSearchForm = () => {
+    Bot.addZoneSearch = () => {
         const form = document.createElement('form');
         const domainInput = document.createElement('input');
         const submitBtn = document.createElement('input');
