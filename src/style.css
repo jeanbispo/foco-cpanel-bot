@@ -80,6 +80,7 @@
 
 .bot-menu a {
     margin: 5px 0;
+    display: block;
     text-decoration: none;
     text-transform: uppercase;
 }

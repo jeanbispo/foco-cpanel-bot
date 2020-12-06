@@ -16,7 +16,8 @@ export default function(Bot) {
         Bot.addSpeachBoubble();
         Bot.addCreateMasterZone();
         Bot.addZoneSearch();
-        Bot.addHome();
+        Bot.addZoneMenu();
+        Bot.addEditZone();
         Bot.addAddress();
         Bot.addNameServer();
         Bot.addAlias();
@@ -114,15 +115,22 @@ export default function(Bot) {
         Bot.menu.appendChild(form);
     }
 
-    Bot.addHome = () => {
+    Bot.addZoneMenu = () => {
+        Bot.zoneMenu = document.createElement('div');
+        Bot.zoneMenu.id = 'zone-menu';
+
+        Bot.menu.appendChild(Bot.zoneMenu);
+    }
+
+    Bot.addEditZone = () => {
         const homeLink = document.createElement('a');
 
-        homeLink.id = 'home';
+        homeLink.id = 'edit-zone';
         homeLink.target = 'right';
-        homeLink.innerHTML = '&#127968; Home';
+        homeLink.innerHTML = '&#127968; Editar zona';
         homeLink.href = `bind8/edit_master.cgi?zone=${Bot.getStorage('domain')}&view=`;
 
-        Bot.menu.appendChild(homeLink);
+        Bot.zoneMenu.appendChild(homeLink);
     }
 
     Bot.addAddress = () => {
@@ -133,7 +141,7 @@ export default function(Bot) {
         addressLink.innerHTML = '&#128187; Endereço';
         addressLink.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=A`;
 
-        Bot.menu.appendChild(addressLink);
+        Bot.zoneMenu.appendChild(addressLink);
     }
 
     Bot.addNameServer = () => {
@@ -141,10 +149,10 @@ export default function(Bot) {
 
         nameServer.target = 'right';
         nameServer.id = 'name-server';
-        nameServer.innerHTML = '&#128203; Servidor de nomes';
+        nameServer.innerHTML = '&#128203; Serv. nomes';
         nameServer.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=NS`;
 
-        Bot.menu.appendChild(nameServer);
+        Bot.zoneMenu.appendChild(nameServer);
     }
 
     Bot.addAlias = () => {
@@ -152,10 +160,10 @@ export default function(Bot) {
 
         alias.id = 'alias';
         alias.target = 'right';
-        alias.innerHTML = '&#128311; Alias';
+        alias.innerHTML = '&#128311; Criar alias';
         alias.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=CNAME`;
 
-        Bot.menu.appendChild(alias);
+        Bot.zoneMenu.appendChild(alias);
     }
 
     Bot.addEmailServer = () => {
@@ -163,12 +171,11 @@ export default function(Bot) {
 
         emailServer.target = 'right';
         emailServer.id = 'emailServer';
-        emailServer.innerHTML = '&#128236; Servidor de e-mail';
+        emailServer.innerHTML = '&#128236; Serv. e-mail';
         emailServer.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=MX`;
 
-        Bot.menu.appendChild(emailServer);
+        Bot.zoneMenu.appendChild(emailServer);
     }
-
 
     Bot.addLogout = () => {
         const logoutLink = document.createElement('a');
@@ -178,14 +185,14 @@ export default function(Bot) {
         logoutLink.innerHTML = '&#9940; Sair';
         logoutLink.href = '/session_login.cgi?logout=1';
 
-        Bot.menu.appendChild(logoutLink);
+        Bot.zoneMenu.appendChild(logoutLink);
     }
 
     Bot.addCredits = () => {
         const credits = document.createElement('p');
         const creatorLink = document.createElement('a');
 
-        credits.innerText = 'O Foco Cpanel Bot foi desenvolvido para facilitar a criação de zona master, no Webmin, conhecido internamente como "cpanel".';
+        credits.innerText = 'O Foco Cpanel Bot foi desenvolvido para facilitar a criação de zona master no Webmin, conhecido internamente como "cpanel".';
         credits.id = 'credits';
 
         creatorLink.innerText = 'Criador: Guilherme Caires';
