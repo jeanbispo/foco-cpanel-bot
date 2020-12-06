@@ -17,6 +17,10 @@ export default function(Bot) {
         Bot.addCreateMasterZone();
         Bot.addZoneSearch();
         Bot.addHome();
+        Bot.addAddress();
+        Bot.addNameServer();
+        Bot.addAlias();
+        Bot.addEmailServer();
         Bot.addLogout();
         Bot.addCredits();
         Bot.addNavigationLinks();
@@ -114,12 +118,57 @@ export default function(Bot) {
         const homeLink = document.createElement('a');
 
         homeLink.id = 'home';
-        homeLink.href = '/bind8/';
         homeLink.target = 'right';
         homeLink.innerHTML = '&#127968; Home';
+        homeLink.href = `bind8/edit_master.cgi?zone=${Bot.getStorage('domain')}&view=`;
 
         Bot.menu.appendChild(homeLink);
     }
+
+    Bot.addAddress = () => {
+        const addressLink = document.createElement('a');
+
+        addressLink.id = 'address';
+        addressLink.target = 'right';
+        addressLink.innerHTML = '&#128187; Endereço';
+        addressLink.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=A`;
+
+        Bot.menu.appendChild(addressLink);
+    }
+
+    Bot.addNameServer = () => {
+        const nameServer = document.createElement('a');
+
+        nameServer.target = 'right';
+        nameServer.id = 'name-server';
+        nameServer.innerHTML = '&#128203; Servidor de nomes';
+        nameServer.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=NS`;
+
+        Bot.menu.appendChild(nameServer);
+    }
+
+    Bot.addAlias = () => {
+        const alias = document.createElement('a');
+
+        alias.id = 'alias';
+        alias.target = 'right';
+        alias.innerHTML = '&#128311; Alias';
+        alias.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=CNAME`;
+
+        Bot.menu.appendChild(alias);
+    }
+
+    Bot.addEmailServer = () => {
+        const emailServer = document.createElement('a');
+
+        emailServer.target = 'right';
+        emailServer.id = 'emailServer';
+        emailServer.innerHTML = '&#128236; Servidor de e-mail';
+        emailServer.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=MX`;
+
+        Bot.menu.appendChild(emailServer);
+    }
+
 
     Bot.addLogout = () => {
         const logoutLink = document.createElement('a');
