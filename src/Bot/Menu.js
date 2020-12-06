@@ -15,7 +15,10 @@ export default function(Bot) {
         Bot.addAvatar();
         Bot.addSpeachBoubble();
         Bot.addForm();
+        Bot.addSearchForm();
+        Bot.addHome();
         Bot.addLogout();
+        Bot.addCredits();
         Bot.addNavigationLinks();
         
         leftFrame.appendChild(Bot.menu);
@@ -65,26 +68,82 @@ export default function(Bot) {
     Bot.addForm = () => {
         const form = document.createElement('form');
         const domainInput = document.createElement('input');
+        const submitBtn = document.createElement('input');
 
         domainInput.type = 'text';
         domainInput.name = 'domain';
         domainInput.autofocus = true;
         domainInput.placeholder = 'dominio.com.br';
+
+        submitBtn.type = 'submit';
+        submitBtn.value = 'Criar';
                 
         form.onsubmit = (event) => Bot.submitDomain(event);
         form.appendChild(domainInput);
+        form.appendChild(submitBtn);
 
         Bot.menu.appendChild(form);
+    }
+
+    Bot.addSearchForm = () => {
+        const form = document.createElement('form');
+        const domainInput = document.createElement('input');
+        const submitBtn = document.createElement('input');
+
+        domainInput.type = 'text';
+        domainInput.name = 'search';
+        domainInput.placeholder = 'Buscar zona';
+
+        submitBtn.type = 'submit';
+        submitBtn.value = 'Ok';
+                
+        form.action = 'https://sdn01fmu.focomultimidia.com:10000/bind8/find_zones.cgi';
+        form.target = 'right';
+        form.onsubmit = (e) => {
+            Bot.speachBoubble.innerText = 'Buscando zona...'
+        };
+
+        form.appendChild(domainInput);
+        form.appendChild(submitBtn);
+
+        Bot.menu.appendChild(form);
+    }
+
+    Bot.addHome = () => {
+        const homeLink = document.createElement('a');
+
+        homeLink.id = 'home';
+        homeLink.href = '/bind8/';
+        homeLink.target = 'right';
+        homeLink.innerHTML = '&#127968; Home';
+
+        Bot.menu.appendChild(homeLink);
     }
 
     Bot.addLogout = () => {
         const logoutLink = document.createElement('a');
 
-        logoutLink.href = '/session_login.cgi?logout=1';
-        logoutLink.innerText = 'Sair';
         logoutLink.id = 'logout';
+        logoutLink.target = 'right';
+        logoutLink.innerHTML = '&#9940; Sair';
+        logoutLink.href = '/session_login.cgi?logout=1';
 
         Bot.menu.appendChild(logoutLink);
+    }
+
+    Bot.addCredits = () => {
+        const credits = document.createElement('p');
+        const creatorLink = document.createElement('a');
+
+        credits.innerText = 'O Foco Cpanel Bot foi desenvolvido para facilitar a criação de zona master, no Webmin, conhecido internamente como "cpanel".';
+        credits.id = 'credits';
+
+        creatorLink.innerText = 'Criador: Guilherme Caires';
+        creatorLink.href = 'https://github.com/gcairesdev';
+        creatorLink.target = '_blank';
+
+        credits.appendChild(creatorLink);
+        Bot.menu.appendChild(credits);
     }
 
     Bot.submitDomain = event => {

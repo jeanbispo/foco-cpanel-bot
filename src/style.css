@@ -1,4 +1,5 @@
 .bot-menu {
+    height: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -6,9 +7,9 @@
 
 .bot-menu .speach-boubble {
     padding: 8px;
-    max-width: 95%;
     color: #fff;
-    margin-top: 20px;
+    max-width: 95%;
+    margin: 20px 0;
     position: relative;
     border-radius: 15px;
     background: #457bc9;
@@ -40,8 +41,31 @@
     transform: rotate(-360deg);
 }
 
+.bot-menu form {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 15px;
+}
+
+.bot-menu form input[type=text] {
+    width: 130px;
+    border-radius: 10px 0 0 10px;
+}
+
+.bot-menu form input[type=submit] {
+    padding: 5px;
+    color: #fff;
+    cursor: pointer;
+    background-color: #457bc9;
+    border-radius: 0 10px 10px 0 !important;
+}
+
+.bot-menu form input[type=submit]:focus {
+    background-color: #003d92;
+    border-color: #003d92;
+}
+
 .bot-menu input {
-    margin: 15px 0;
     outline: none;
     padding: 5px 10px;
     text-align: center;
@@ -54,6 +78,7 @@
 }
 
 .bot-menu a {
+    margin: 5px 0;
     text-decoration: none;
     text-transform: uppercase;
 }
@@ -63,4 +88,20 @@
     color: red !important;
 }
 
+.bot-menu #credits {
+    margin-top: 30px;
+    color: #00000070;
+    text-align: justify;
+}
+
+.bot-menu #credits a {
+    display: block;
+    color: #457bc9;
+    margin-top: 5px;
+    text-align: center;
+    text-transform: capitalize;
+}
+
+html { height: 95% }
+#popup { height: 100% !important; }
 .bot-menu #botNavigation { display: none; }
