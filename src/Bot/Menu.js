@@ -183,7 +183,7 @@ export default function(Bot) {
 
         text.id = 'text';
         text.target = 'right';
-        text.innerHTML = '&#128172; Texto';
+        text.innerHTML = '&#128172; Criar Texto';
         text.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=TXT`;
 
         Bot.zoneMenu.appendChild(text);
