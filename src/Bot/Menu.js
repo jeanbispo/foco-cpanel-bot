@@ -22,6 +22,7 @@ export default function(Bot) {
         Bot.addNameServer();
         Bot.addAlias();
         Bot.addEmailServer();
+        Bot.addText();
         Bot.addLogout();
         Bot.addCredits();
         Bot.addNavigationLinks();
@@ -175,6 +176,17 @@ export default function(Bot) {
         emailServer.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=MX`;
 
         Bot.zoneMenu.appendChild(emailServer);
+    }
+
+    Bot.addText = () => {
+        const text = document.createElement('a');
+
+        text.id = 'text';
+        text.target = 'right';
+        text.innerHTML = '&#128172; Texto';
+        text.href = `bind8/edit_recs.cgi?zone=${Bot.getStorage('domain')}&view=any&type=TXT`;
+
+        Bot.zoneMenu.appendChild(text);
     }
 
     Bot.addLogout = () => {
