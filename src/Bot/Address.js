@@ -25,6 +25,9 @@ export default function(Bot) {
                 if ( secondAddress ) {
                     clearInterval(interval);
 
+                    nameInput.value = '';
+                    addressInput.value = '';
+
                     Bot.speachBoubble.innerText = 'Por aqui, encerramos!';
                     
                 } else if ( firstAddress ) {
