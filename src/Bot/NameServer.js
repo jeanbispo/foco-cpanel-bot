@@ -2,7 +2,7 @@ export default function(Bot) {
 
     Bot.createNameServer = () => {
         const interval = setInterval(() => {
-            const secondNameServer = window.frames[1].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[0];
+            const secondNameServer = window.frames[1].document.querySelectorAll('tr[bgcolor="#f5f5f5"]')[1];
 
             const zoneNameInput = window.frames[1].document.querySelector('#name');
             const serverNameInput = window.frames[1].document.querySelector('#value0');
@@ -11,6 +11,9 @@ export default function(Bot) {
 
                 if ( secondNameServer ) {
                     clearInterval(interval);
+
+                    zoneNameInput.value = '';
+                    serverNameInput.value = '';
 
                     Bot.speachBoubble.innerText = 'Por aqui, encerramos!';
                 } else {
