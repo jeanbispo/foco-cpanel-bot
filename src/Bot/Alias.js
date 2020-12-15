@@ -63,6 +63,9 @@ export default function(Bot) {
                 if (registers.length == 7) {
                     clearInterval(interval);
 
+                    nameInput.value = '';
+                    realNameInput.value = '';
+
                     Bot.speachBoubble.innerText = 'Finalmente acabou... O alias...';
                 }
             }
