@@ -100,7 +100,9 @@ export default function(Bot) {
         form.action = 'https://sdn01fmu.focomultimidia.com:10000/bind8/find_zones.cgi';
         form.target = 'right';
         form.onsubmit = (e) => {
-            Bot.speachBoubble.innerText = 'Buscando zona...'
+            Bot.speachBoubble.innerText = 'Buscando zona...';
+
+            domainInput.value = '';
         };
 
         form.appendChild(domainInput);
