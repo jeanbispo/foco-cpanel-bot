@@ -39,14 +39,7 @@ export default function(Bot) {
         generalOptions.id = 'general-options';
         generalOptions.href = 'https://sdn01fmu.focomultimidia.com:10000/bind8/'
 
-        const createMasterZone = document.createElement('a');
-        createMasterZone.target = 'right';
-        createMasterZone.id = 'create-master-zone';
-        createMasterZone.href = 'https://sdn01fmu.focomultimidia.com:10000/bind8/master_form.cgi/'
-
         navigationLinks.appendChild(generalOptions);
-        navigationLinks.appendChild(createMasterZone);
-
         Bot.menu.appendChild(navigationLinks);
     }
 
@@ -224,7 +217,11 @@ export default function(Bot) {
         event.target[0].value = '';
         Bot.speachBoubble.innerText = 'Deixa comigo!';
 
-        Bot.navigate('create-master-zone');
+        const masterZoneLink = window.frames[1].document.querySelector('a[href="master_form.cgi"]');
+
+        masterZoneLink 
+            ? masterZoneLink.click()
+            : Bot.speachBoubble.innerText = 'Não é possível criar zona nessa página, clique em mim.';
     }
 
 }
