@@ -102,7 +102,7 @@ export default function(Bot) {
         form.onsubmit = (e) => {
             Bot.speachBoubble.innerText = 'Buscando zona...';
 
-            domainInput.value = '';
+            setTimeout(() => domainInput.value = '', 500);
         };
 
         form.appendChild(domainInput);
