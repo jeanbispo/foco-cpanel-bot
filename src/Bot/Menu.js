@@ -224,7 +224,11 @@ export default function(Bot) {
         event.target[0].value = '';
         Bot.speachBoubble.innerText = 'Deixa comigo!';
 
-        Bot.navigate('create-master-zone');
+        const masterZoneLink = window.frames[1].document.querySelector('a[href="master_form.cgi"]');
+
+        masterZoneLink 
+            ? masterZoneLink.click()
+            : Bot.speachBoubble.innerText = 'Não é possível criar zona nessa página, clique em mim.';
     }
 
 }
