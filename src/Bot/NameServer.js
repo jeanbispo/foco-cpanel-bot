@@ -16,6 +16,9 @@ export default function(Bot) {
                     serverNameInput.value = '';
 
                     Bot.speachBoubble.innerText = 'Por aqui, encerramos!';
+                    
+                    return Bot.navigate('alias');
+
                 } else {
 
                     zoneNameInput.value = '';

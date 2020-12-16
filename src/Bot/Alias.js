@@ -67,6 +67,8 @@ export default function(Bot) {
                     realNameInput.value = '';
 
                     Bot.speachBoubble.innerText = 'Finalmente acabou... O alias...';
+
+                    return Bot.navigate('emailServer');
                 }
             }
         }, 100);

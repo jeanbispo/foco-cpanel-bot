@@ -29,7 +29,9 @@ export default function(Bot) {
                     addressInput.value = '';
 
                     Bot.speachBoubble.innerText = 'Por aqui, encerramos!';
-                    
+
+                    return Bot.navigate('name-server');
+
                 } else if ( firstAddress ) {
 
                     nameInput.value = 'www';

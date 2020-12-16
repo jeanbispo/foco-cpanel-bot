@@ -12,6 +12,8 @@ export default function(Bot) {
                     clearInterval(interval);
 
                     Bot.speachBoubble.innerText = 'Por aqui, encerramos. Mas anime-se, só falta "texto"!';
+
+                    return Bot.navigate('text');
                 } else {
                     priorityInput.value = '10';
                     emailServerInput.value = 'mx.uhserver.com.';
